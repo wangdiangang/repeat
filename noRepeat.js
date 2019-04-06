@@ -5,13 +5,13 @@ let arr = [1, 1, "a", "a", [], [], [1], [1], [2, [2]], [2, [2]], {a: 1}, {a: 1},
 function repeat(arr) {
     let newArr = [];
     let newCur = [];
-    for (let i = 0; i < arr.length; i++) {
+    for (let i = 0; i < arr.length; i++) {//先循环
         let cur = arr[i];
-        if (cur instanceof Array || cur instanceof Object) {
-            let curJson = JSON.stringify(cur)
-            newCur.indexOf(curJson) === -1 ? newCur.push(curJson) : newArr.push(cur)
-        } else {
-            newArr.indexOf(cur) === -1 ? newArr.push(cur) : null
+        if (cur instanceof Array || cur instanceof Object) {//数组或者对象
+            let curJson = JSON.stringify(cur)//转json字符串
+            newCur.indexOf(curJson) === -1 ? newCur.push(curJson) : newArr.push(cur)//newCur没有的话放进去，有的话放进newArr
+        } else {//不是数组或者对象
+            newArr.indexOf(cur) === -1 ? newArr.push(cur) : null//正常去重方式
         }
     }
     newCur = null;
