@@ -27,7 +27,7 @@ console.log(repeat(arr));
 //检测数据类型
 function test(type) {
     type = Object.prototype.toString.call(type)//type重新赋值
-    type = type.slice(8, -1)//type再重新赋值
+    type = type.slice(8, -1)//type再重新赋值  把[Object type]截取索引8到length-1
     return type  //给丫的丢出去
 }
 
